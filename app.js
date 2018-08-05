@@ -157,7 +157,10 @@ var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
   //eslint-disable-line
-  let product = dynamicArray.reduce((product, elm) => product * elm, 1);
+  let product = dynamicArray.reduce(
+    (product, elm) => multiply(product, elm)[0],
+    1
+  );
   return [
     product,
     "The numbers " +
